@@ -67,7 +67,7 @@ const watcher = () => {
     server: true
   });
   watch(paths.scss, style);
-  watch(paths.js, series(script, lint));
+  watch(paths.js, series(script, lint, reload));
   watch(paths.base, reload);
 };
 
