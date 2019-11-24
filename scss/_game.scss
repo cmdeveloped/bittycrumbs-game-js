@@ -1,0 +1,17 @@
+#game {
+  .title {
+    color: $primary;
+  }
+  #score {
+    @include flex(center, center, wrap);
+    color: $primary-100;
+    font-size: 0.85rem;
+    margin-top: 1rem;
+    p {
+      margin: 0;
+      & + p {
+        margin-left: 2rem;
+      }
+    }
+  }
+}

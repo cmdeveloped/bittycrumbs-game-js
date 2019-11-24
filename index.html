@@ -31,12 +31,12 @@
     <script src="app.min.js" charset="utf-8"></script>
   </head>
   <body>
-    <div class="text-center">
+    <div class="wrapper text-center">
       <!-- splash screen -->
       <div id="splash">
         <div class="container">
           <section class="title">
-            <h1>bitty crumbs</h1>
+            <h1 class="h3">bitty crumbs</h1>
           </section>
           <div class="start">
             <button class="secondary" type="button" name="start">start</button>
@@ -47,24 +47,34 @@
       <div id="game">
         <div class="container">
           <section class="title">
-            <h1>bitty crumbs</h1>
+            <h1 class="h3">bitty crumbs</h1>
+            <div id="score">
+              <p class="won">
+                wins:
+                <span>0</span>
+              </p>
+              <p class="lost">
+                losses:
+                <span>0</span>
+              </p>
+            </div>
           </section>
           <section id="bitty"></section>
           <section id="crumbs"></section>
           <section id="lives">
-            <i class="fas fa-heart"></i>
-            <i class="fas fa-heart"></i>
-            <i class="fas fa-heart"></i>
-            <i class="fas fa-heart"></i>
-            <i class="fas fa-heart"></i>
+            <i class="fas fa-heart life"></i>
+            <i class="fas fa-heart life"></i>
+            <i class="fas fa-heart life"></i>
+            <i class="fas fa-heart life"></i>
+            <i class="fas fa-heart life"></i>
           </section>
         </div>
       </div>
       <!-- result screen -->
-      <div id="result">
+      <div id="result" hidden>
         <div class="container">
           <section class="title">
-            <h1>bitty crumbs</h1>
+            <h1 class="h3">bitty crumbs</h1>
           </section>
           <section class="message"></section>
           <div class="start">

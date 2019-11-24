@@ -1,0 +1,9 @@
+#lives {
+  .fa-heart {
+    color: $primary;
+    font-size: 1.5rem;
+    &.missed {
+      color: $secondary;
+    }
+  }
+}

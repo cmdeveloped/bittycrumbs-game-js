@@ -5,6 +5,8 @@
 class Game {
   constructor(phrases) {
     this.missed = 0;
+    this.win = 0;
+    this.lost = 0;
     this.phrases = phrases;
     this.selected = null;
   }
@@ -15,7 +17,6 @@ class Game {
    */
   startGame() {
     let selected = this.getRandomPhrase();
-    console.log(selected);
     let phrase = new Phrase(selected);
     this.selected = phrase;
     phrase.addPhraseToDom();
@@ -37,6 +38,7 @@ class Game {
   handleInteraction(letter) {
     const phrase = this.selected;
     let check = phrase.checkLetter(letter);
+    console.log(check);
     check ? this.checkWin() : this.removeLife();
   }
 
@@ -46,18 +48,32 @@ class Game {
    */
   checkWin() {
     let hidden = $(".letter.hide");
-    !hidden.length ? gameOver(true) : false;
+    !hidden.length ? this.gameOver(true) : false;
   }
 
   /*
    * removeLife should remove a life from the screen
    */
-  removeLife() {}
+  removeLife() {
+    const lives = $("#lives .life");
+    let missed = this.missed;
+    $(lives[missed]).addClass("missed");
+    this.missed++;
+    this.missed === 5 ? this.gameOver(false) : false;
+  }
 
   /*
    * gameOver should be called when a user wins or loses
    */
   gameOver(winner) {
-    winner ? alert("you win") : alert("you lose");
+    winner ? this.win++ : this.lost++;
+    let result = winner ? "won" : "lost";
+    let update = winner ? this.win : this.lost;
+    let message = winner ? "You win!" : "Sorry! Try Again.";
+    $(`#score .${result} span`).text(update);
+    $("#result .message").append(`<h2 class="display-3">${message}</h2>`);
+    $("#result")
+      .addClass(result)
+      .removeAttr("hidden");
   }
 }

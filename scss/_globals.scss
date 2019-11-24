@@ -9,6 +9,14 @@
 html,
 body {
   font-family: "Merriweather", serif;
+  min-height: 100vh;
+}
+
+body {
+  .wrapper {
+    @include flex(center, center, nowrap);
+    min-height: 100vh;
+  }
 }
 
 .title {

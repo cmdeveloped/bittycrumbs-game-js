@@ -1,0 +1,20 @@
+#result {
+  @include flex(center, center, nowrap);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  &.won {
+    background-color: $primary-200;
+    color: white;
+  }
+  &.lost {
+    background-color: $secondary;
+    color: $primary;
+  }
+  .message {
+    margin: 2rem 0;
+  }
+}

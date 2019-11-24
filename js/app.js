@@ -31,22 +31,34 @@ const loadPhrases = () => {
 };
 
 let game;
+const resetGame = () => {
+  game.startGame();
+  game.missed = 0;
+  $(".fa-heart").removeClass("missed");
+  $("#result")
+    .removeClass("won lost")
+    .attr("hidden", true)
+    .find(".message")
+    .empty();
+};
+
 $(document).ready(() => {
   // init functions
   initKeyboard();
   loadPhrases();
+
   // start game action
   $("button[name=start]").on("click", () => {
     $("#splash").hide();
     game = new Game(phrases);
     game.startGame();
   });
+
   // replay game action
   $("button[name=replay]").on("click", () => {
-    game = new Game(phrases);
-    game.startGame();
-    $("#results").hide();
+    resetGame();
   });
+
   // bind dynamically added button action
   $("#crumbs").on("click", ".key", e => {
     let letter = e.target.value;
