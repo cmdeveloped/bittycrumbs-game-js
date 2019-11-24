@@ -49,8 +49,14 @@ class Game {
     !hidden.length ? gameOver(true) : false;
   }
 
+  /*
+   * removeLife should remove a life from the screen
+   */
   removeLife() {}
 
+  /*
+   * gameOver should be called when a user wins or loses
+   */
   gameOver(winner) {
     winner ? alert("you win") : alert("you lose");
   }

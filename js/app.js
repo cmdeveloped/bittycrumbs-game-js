@@ -14,7 +14,7 @@ const initKeyboard = () => {
     for (let row of keys) {
       keyboard += `<div class="${row}">`;
       for (let key of data[row]) {
-        keyboard += `<button type="button" class="key" value="${key}">${key}</button>`;
+        keyboard += `<button type="button" class="key secondary" value="${key}">${key}</button>`;
       }
       keyboard += `</div>`;
     }

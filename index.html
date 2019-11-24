@@ -3,13 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <title>Bitty Crumbs</title>
-    <link rel="stylesheet" href="app.min.css" />
     <link
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="app.min.css" />
 
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -20,35 +24,54 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.core.min.js"
       charset="utf-8"
     ></script>
+    <script
+      src="https://kit.fontawesome.com/3afc27320a.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="app.min.js" charset="utf-8"></script>
   </head>
   <body>
-    <div class="container text-center">
+    <div class="text-center">
       <!-- splash screen -->
       <div id="splash">
-        <section class="title">
-          <h1>bitty crumbs</h1>
-        </section>
-        <div class="start">
-          <button type="button" name="start">start</button>
+        <div class="container">
+          <section class="title">
+            <h1>bitty crumbs</h1>
+          </section>
+          <div class="start">
+            <button class="secondary" type="button" name="start">start</button>
+          </div>
         </div>
       </div>
       <!-- game screen -->
       <div id="game">
-        <section class="title">
-          <h1>bitty crumbs</h1>
-        </section>
-        <section id="bitty"></section>
-        <section id="crumbs"></section>
+        <div class="container">
+          <section class="title">
+            <h1>bitty crumbs</h1>
+          </section>
+          <section id="bitty"></section>
+          <section id="crumbs"></section>
+          <section id="lives">
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-heart"></i>
+          </section>
+        </div>
       </div>
       <!-- result screen -->
       <div id="result">
-        <section class="title">
-          <h1>bitty crumbs</h1>
-        </section>
-        <section class="message"></section>
-        <div class="start">
-          <button type="button" name="replay">play again</button>
+        <div class="container">
+          <section class="title">
+            <h1>bitty crumbs</h1>
+          </section>
+          <section class="message"></section>
+          <div class="start">
+            <button class="secondary" type="button" name="replay">
+              play again
+            </button>
+          </div>
         </div>
       </div>
     </div>
