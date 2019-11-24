@@ -23,20 +23,34 @@
     <script src="app.min.js" charset="utf-8"></script>
   </head>
   <body>
-    <div class="container">
+    <div class="container text-center">
+      <!-- splash screen -->
       <div id="splash">
-        <section id="title">
-          <h1>Bitty Crumbs</h1>
+        <section class="title">
+          <h1>bitty crumbs</h1>
         </section>
         <div class="start">
-          <button type="button" name="start">Start!</button>
+          <button type="button" name="start">start</button>
         </div>
       </div>
-      <section id="title">
-        <h1>Bitty Crumbs</h1>
-      </section>
-      <section id="bitty"></section>
-      <section id="crumbs"></section>
+      <!-- game screen -->
+      <div id="game">
+        <section class="title">
+          <h1>bitty crumbs</h1>
+        </section>
+        <section id="bitty"></section>
+        <section id="crumbs"></section>
+      </div>
+      <!-- result screen -->
+      <div id="result">
+        <section class="title">
+          <h1>bitty crumbs</h1>
+        </section>
+        <section class="message"></section>
+        <div class="start">
+          <button type="button" name="replay">play again</button>
+        </div>
+      </div>
     </div>
   </body>
 </html>

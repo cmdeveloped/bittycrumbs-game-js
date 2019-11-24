@@ -1,0 +1,37 @@
+#bitty {
+  @include flex(center, center, wrap);
+
+  .word {
+    & + .word {
+      margin-left: 1.5rem;
+    }
+  }
+
+  span {
+    line-height: 1.8;
+    display: inline-block;
+  }
+
+  .letter {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 5px;
+    & + .letter {
+      margin-left: 1px;
+    }
+
+    &.hide {
+      background-color: #e3e3e3;
+      color: transparent;
+    }
+
+    &:not(.hide) {
+      background-color: #b83b73;
+      color: white;
+    }
+  }
+
+  .character {
+    width: 1rem;
+  }
+}

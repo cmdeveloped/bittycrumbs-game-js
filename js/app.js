@@ -3,6 +3,7 @@ The Bitty Crumbs idiom matching game
 Author: Collin Smith
 */
 
+// load keys from json and create keyboard
 const initKeyboard = () => {
   const crumbs = $("#crumbs");
   let keys = "../data/keys.json";
@@ -21,6 +22,7 @@ const initKeyboard = () => {
   });
 };
 
+// load phrases from json data
 let phrases = "../data/phrases.json";
 const loadPhrases = () => {
   $.getJSON(phrases, data => {
@@ -30,11 +32,24 @@ const loadPhrases = () => {
 
 let game;
 $(document).ready(() => {
+  // init functions
   initKeyboard();
   loadPhrases();
-
+  // start game action
   $("button[name=start]").on("click", () => {
+    $("#splash").hide();
     game = new Game(phrases);
-    game.setPhrase();
+    game.startGame();
+  });
+  // replay game action
+  $("button[name=replay]").on("click", () => {
+    game = new Game(phrases);
+    game.startGame();
+    $("#results").hide();
+  });
+  // bind dynamically added button action
+  $("#crumbs").on("click", ".key", e => {
+    let letter = e.target.value;
+    game.handleInteraction(letter);
   });
 });
